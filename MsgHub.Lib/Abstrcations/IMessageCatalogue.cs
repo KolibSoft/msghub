@@ -10,17 +10,17 @@ public interface IMessageCatalogue : ICatalogue<MessageModel, IMessageCatalogue.
 
     public interface IFilters { }
 
-    public class MemoryCatalogue : MemoryCatalogue<MessageModel, IFilters>
+    public class MemoryCatalogue : MemoryCatalogue<MessageModel, IFilters>, IMessageCatalogue
     {
         public MemoryCatalogue(ICollection<MessageModel> collection) : base(collection) { }
     }
 
-    public class DataBaseCatalogue : DatabaseCatalogue<MessageModel, IFilters>
+    public class DataBaseCatalogue : DatabaseCatalogue<MessageModel, IFilters>, IMessageCatalogue
     {
         public DataBaseCatalogue(DbContext dbContext) : base(dbContext) { }
     }
 
-    public class WebCatalogue : WebCatalogue<MessageModel, IFilters>
+    public class WebCatalogue : WebCatalogue<MessageModel, IFilters>, IMessageCatalogue
     {
         public WebCatalogue(HttpClient httpClient, string uri) : base(httpClient, uri) { }
     }
