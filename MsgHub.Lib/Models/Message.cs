@@ -15,6 +15,7 @@ public class MessageModel : IRegister, IUpdatable<MessageModel>
     public string Sender { get; set; } = string.Empty;
     public string Receiver { get; set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
+    public bool Active { get; set; } = false;
 
     public bool Validate(ICollection<string>? errors = null)
     {
@@ -42,6 +43,7 @@ public class MessageModel : IRegister, IUpdatable<MessageModel>
         Sender = model.Sender;
         Receiver = model.Receiver;
         Content = model.Content;
+        Active = model.Active;
     }
 
 }
