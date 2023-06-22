@@ -28,7 +28,7 @@ public abstract class MessageController : CatalogueController<MessageModel, Mess
     [Authorize(PolicyNames.MessageManager)]
     public override IActionResult Delete([FromRoute] Guid id) => base.Delete(id);
 
-    public MessageController(IMessageCatalogue catalogue) : base(catalogue) { }
+    public MessageController(IMsgHubContext context) : base(context.MessageCatalogue) { }
 
     public class Filters : IMessageCatalogue.IFilters { }
 

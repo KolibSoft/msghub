@@ -5,7 +5,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="KolibSoft.MsgHub" Version="3.0.0-a" />
+    <PackageReference Include="KolibSoft.AuthStore" Version="4.2.0" />
+    <PackageReference Include="KolibSoft.AuthStore.Controllers" Version="4.2.0" />
+    <PackageReference Include="KolibSoft.Jwt" Version="2.0.1" />
+    <PackageReference Include="KolibSoft.MsgHub" Version="3.0.0-b" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
   </ItemGroup>
 
   <PropertyGroup>
