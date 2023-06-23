@@ -49,20 +49,19 @@ public class Context : DbContext, IAuthStoreContext, IMsgHubContext
     public DbSet<CredentialModel> Credentials { get; set; } = null!;
     public DbSet<PermissionModel> Permissions { get; set; } = null!;
     public DbSet<CredentialPermissionModel> CredentialPermissions { get; set; } = null!;
+    public DbSet<MessageModel> Messages { get; set; } = null!;
 
     public ICredentialCatalogue CredentialCatalogue { get; }
     public IPermissionCatalogue PermissionCatalogue { get; }
     public ICredentialPermissionCatalogue CredentialPermissionCatalogue { get; }
     public IMessageCatalogue MessageCatalogue { get; }
 
-    public static List<MessageModel> Messages { get; } = new List<MessageModel>();
-
     public Context(DbContextOptions<Context> options) : base(options)
     {
         CredentialCatalogue = new ICredentialCatalogue.DataBaseCatalogue(this);
         PermissionCatalogue = new IPermissionCatalogue.DataBaseCatalogue(this);
         CredentialPermissionCatalogue = new ICredentialPermissionCatalogue.DataBaseCatalogue(this);
-        MessageCatalogue = new IMessageCatalogue.MemoryCatalogue(Messages);
+        MessageCatalogue = new IMessageCatalogue.DataBaseCatalogue(this);
     }
 
 }
