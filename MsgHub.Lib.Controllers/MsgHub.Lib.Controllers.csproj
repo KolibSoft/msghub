@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="KolibSoft.Catalogue.Controllers" Version="3.3.1" />
-    <PackageReference Include="KolibSoft.MsgHub" Version="3.1.0-b" />
+    <PackageReference Include="KolibSoft.MsgHub" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
   </ItemGroup>
 
