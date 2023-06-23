@@ -11,18 +11,15 @@ namespace KolibSoft.MsgHub.Models;
 public class MessageModel : IRegister, IUpdatable<MessageModel>
 {
 
-    public enum MessageState
-    {
-        Ready,
-        Delivering,
-        Delivered
-    }
+    public const string Ready = "Ready";
+    public const string Delivering = "Delivering";
+    public const string Delivered = "Delivered";
 
     public Guid Id { get; set; } = Guid.NewGuid();
     public string Sender { get; set; } = string.Empty;
     public string Receiver { get; set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
-    public MessageState State { get; set; } = MessageState.Ready;
+    public string State { get; set; } = Ready;
     public bool Active { get; set; } = false;
 
     public bool Validate(ICollection<string>? errors = null)

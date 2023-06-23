@@ -13,7 +13,7 @@ public interface IMessageCatalogue : ICatalogue<MessageModel, IMessageCatalogue.
     {
         public string Hint { get; set; } = string.Empty;
         public bool Clean { get; set; } = true;
-        public IEnumerable<MessageModel.MessageState> States { get; set; } = new List<MessageModel.MessageState>();
+        public IEnumerable<string> States { get; set; } = new List<string>();
     }
 
     public class MemoryCatalogue : MemoryCatalogue<MessageModel, Filters>, IMessageCatalogue
