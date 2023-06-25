@@ -9,11 +9,12 @@ namespace KolibSoft.MsgHub.Abstractions;
 public interface IMessageCatalogue : ICatalogue<MessageModel, IMessageCatalogue.Filters>
 {
 
-    public class Filters
+    public class Filters : IPageFilters
     {
         public string Hint { get; set; } = string.Empty;
         public bool Clean { get; set; } = true;
         public IEnumerable<string> States { get; set; } = new List<string>();
+        public int PageIndex { get; set; } = 0;
     }
 
     public class MemoryCatalogue : MemoryCatalogue<MessageModel, Filters>, IMessageCatalogue

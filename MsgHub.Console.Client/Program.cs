@@ -22,5 +22,5 @@ var result = messageClient.MessageCatalogue.CreateItem(new MessageModel
     Content = "HI MANU"
 }, errors);
 
-var messages = messageClient.MessageCatalogue.GetPage(0);
+var messages = messageClient.MessageCatalogue.GetItems();
 var success = true;

@@ -10,11 +10,8 @@ namespace KolibSoft.MsgHub.Controllers;
 public abstract class MessageController : CatalogueController<MessageModel, IMessageCatalogue.Filters>
 {
 
-
-    public override IActionResult Get([FromQuery] IMessageCatalogue.Filters? filters = null) => NotFound();
-
     [Authorize(PolicyNames.MessageReader)]
-    public override IActionResult GetPage([FromQuery] int pageIndex, [FromQuery] int pageSize = 10, [FromQuery] IMessageCatalogue.Filters? filters = null) => base.GetPage(pageIndex, pageSize, filters);
+    public override IActionResult Get([FromQuery] IMessageCatalogue.Filters? filters = null) => base.Get(filters);
 
     [Authorize(PolicyNames.MessageReader)]
     public override IActionResult Get([FromRoute] Guid id) => base.Get(id);
