@@ -43,7 +43,13 @@ public class TestMessageController : MessageController
     public TestMessageController(Context context) : base(context) { }
 }
 
-public class Context : DbContext, IAuthStoreContext, IMsgHubContext
+public class Context : DbContext,
+    IAuthStoreContext,
+    ICredentialCatalogue.DataBaseCatalogue<Context>.IContext,
+    IPermissionCatalogue.DataBaseCatalogue<Context>.IContext,
+    ICredentialPermissionCatalogue.DataBaseCatalogue<Context>.IContext,
+    IMsgHubContext,
+    IMessageCatalogue.DataBaseCatalogue<Context>.IContext
 {
 
     public DbSet<CredentialModel> Credentials { get; set; } = null!;
@@ -56,12 +62,15 @@ public class Context : DbContext, IAuthStoreContext, IMsgHubContext
     public ICredentialPermissionCatalogue CredentialPermissionCatalogue { get; }
     public IMessageCatalogue MessageCatalogue { get; }
 
+    IEnumerable<CredentialPermissionModel> ICredentialCatalogue.IContext.CredentialPermissions => CredentialPermissions;
+    IEnumerable<CredentialPermissionModel> IPermissionCatalogue.IContext.CredentialPermissions => CredentialPermissions;
+
     public Context(DbContextOptions<Context> options) : base(options)
     {
-        CredentialCatalogue = new ICredentialCatalogue.DataBaseCatalogue(this);
-        PermissionCatalogue = new IPermissionCatalogue.DataBaseCatalogue(this);
-        CredentialPermissionCatalogue = new ICredentialPermissionCatalogue.DataBaseCatalogue(this);
-        MessageCatalogue = new IMessageCatalogue.DataBaseCatalogue(this);
+        CredentialCatalogue = new ICredentialCatalogue.DataBaseCatalogue<Context>(this);
+        PermissionCatalogue = new IPermissionCatalogue.DataBaseCatalogue<Context>(this);
+        CredentialPermissionCatalogue = new ICredentialPermissionCatalogue.DataBaseCatalogue<Context>(this);
+        MessageCatalogue = new IMessageCatalogue.DataBaseCatalogue<Context>(this);
     }
 
 }
