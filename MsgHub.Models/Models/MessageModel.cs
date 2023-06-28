@@ -1,8 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using KolibSoft.Catalogue.Abstractions;
 using KolibSoft.Catalogue.Models;
 
 namespace KolibSoft.MsgHub.Models;
 
+[Table("message")]
 public class MessageModel : AuditableModel, IUpdatable<MessageModel>
 {
 
