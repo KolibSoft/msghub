@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>KolibSoft.MsgHub.Controllers</PackageId>
-    <AssemblyName>KolibSoft.MsgHub.Controllers</AssemblyName>
-    <PackageVersion>3.3.0</PackageVersion>
+    <PackageId>KolibSoft.MsgHub.Models</PackageId>
+    <AssemblyName>KolibSoft.MsgHub.Models</AssemblyName>
+    <PackageVersion>1.0.0-a</PackageVersion>
     <Authors>Kolib Software</Authors>
     <Copyright>Kolib Software</Copyright>
     <RepositoryUrl>https://github.com/KolibSoft/msghub</RepositoryUrl>
@@ -19,12 +19,6 @@
 
   <ItemGroup>
     <None Include="..\README.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="KolibSoft.Catalogue.Controllers" Version="4.0.3" />
-    <PackageReference Include="KolibSoft.MsgHub" Version="3.3.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
   </ItemGroup>
 
 </Project>
