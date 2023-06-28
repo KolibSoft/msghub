@@ -25,4 +25,8 @@
     <ProjectReference Include="..\MsgHub.Models\MsgHub.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="KolibSoft.Catalogue.Service" Version="1.0.0-b" />
+  </ItemGroup>
+
 </Project>
