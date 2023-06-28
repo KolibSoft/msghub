@@ -21,4 +21,8 @@
     <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="KolibSoft.Catalogue.Models" Version="1.0.0-b" />
+  </ItemGroup>
+
 </Project>
