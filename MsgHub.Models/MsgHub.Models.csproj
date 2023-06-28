@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="KolibSoft.Catalogue.Models" Version="1.0.0-b" />
+    <PackageReference Include="KolibSoft.Catalogue.Models" Version="1.0.0-d" />
   </ItemGroup>
 
 </Project>
