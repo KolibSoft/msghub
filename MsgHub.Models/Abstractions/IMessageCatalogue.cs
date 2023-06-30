@@ -4,4 +4,4 @@ using KolibSoft.MsgHub.Models;
 
 namespace KolibSoft.MsgHub.Abstractions;
 
-public interface IMessageCatalogue : ICatalogue<MessageModel, MessageFilters> { }
+public interface IMessageCatalogue : ISyncCatalogue<MessageModel, MessageFilters>, IAsyncCatalogue<MessageModel, MessageFilters> { }

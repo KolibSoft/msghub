@@ -27,6 +27,6 @@ public abstract class MessageController : CatalogueController<MessageModel, Mess
     [Authorize(PolicyNames.MessageManager)]
     public override Task<IActionResult> DeleteAsync([FromRoute] Guid id) => base.DeleteAsync(id);
 
-    protected MessageController(ICatalogue<MessageModel, MessageFilters> catalogue) : base(catalogue) { }
+    protected MessageController(IAsyncCatalogue<MessageModel, MessageFilters> catalogue) : base(catalogue) { }
 
 }

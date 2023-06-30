@@ -39,13 +39,13 @@ public class MessageCatalogue<TContext> : SyncCatalogue<MessageModel, MessageFil
         return item;
     }
 
-    public override bool Create(MessageModel item, ICollection<string>? errors = null)
+    public override Guid Create(MessageModel item, ICollection<string>? errors = null)
     {
         item.Id = Guid.NewGuid();
-        if (!item.Validate(errors)) return false;
+        if (!item.Validate(errors)) return Guid.Empty;
         Context.Messages.Add(item);
         Context.SaveChanges();
-        return true;
+        return item.Id;
     }
 
     public override bool Update(Guid id, MessageModel item, ICollection<string>? errors = null)
@@ -54,7 +54,7 @@ public class MessageCatalogue<TContext> : SyncCatalogue<MessageModel, MessageFil
         var original = GetItem(id);
         if (original == null)
         {
-            errors?.Add(ErrorCodes.NoItem);
+            errors?.Add(CatalogueErrorCodes.NoItem);
             return false;
         }
         item.Overlap(original);
@@ -70,7 +70,7 @@ public class MessageCatalogue<TContext> : SyncCatalogue<MessageModel, MessageFil
         var original = GetItem(id);
         if (original == null)
         {
-            errors?.Add(ErrorCodes.NoItem);
+            errors?.Add(CatalogueErrorCodes.NoItem);
             return false;
         }
         original.Active = false;
