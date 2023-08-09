@@ -1,3 +1,6 @@
+*.http
+*.db
+
 .vs
 .vscode
 
