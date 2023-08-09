@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="KolibSoft.Catalogue.Server" Version="3.0.3" />
+  </ItemGroup>
+
 </Project>
