@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>KolibSoft.MsgHub.Core</PackageId>
-    <AssemblyName>KolibSoft.MsgHub.Core</AssemblyName>
+    <PackageId>KolibSoft.MsgHub.Server</PackageId>
+    <AssemblyName>KolibSoft.MsgHub.Server</AssemblyName>
     <PackageVersion>2.0.0-a</PackageVersion>
     <Authors>Kolib Software</Authors>
     <Copyright>Kolib Software</Copyright>
@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="KolibSoft.Catalogue.Core" Version="3.0.3" />
+    <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
 </Project>
