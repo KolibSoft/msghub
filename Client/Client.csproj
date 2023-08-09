@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>KolibSoft.MsgHub.Server</PackageId>
-    <AssemblyName>KolibSoft.MsgHub.Server</AssemblyName>
+    <PackageId>KolibSoft.MsgHub.Client</PackageId>
+    <AssemblyName>KolibSoft.MsgHub.Client</AssemblyName>
     <PackageVersion>2.0.0-a</PackageVersion>
     <Authors>Kolib Software</Authors>
     <Copyright>Kolib Software</Copyright>
