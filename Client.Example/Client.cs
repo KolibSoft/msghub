@@ -21,7 +21,7 @@ public class MsgHubClient
     public MsgHubChanges Changes { get; }
 
     public IAuthConnector Auth { get; }
-    public ServiceCatalogue<MessageModel, CatalogueFilters> Messages { get; }
+    public ServiceCatalogue<MessageModel, MessageFilters> Messages { get; }
 
     public async Task Sync()
     {
@@ -34,7 +34,7 @@ public class MsgHubClient
         DbContext = new MsgHubContext();
         Auth = new AuthService(HttpClient, $"{uri}/auth");
         Changes = changes;
-        Messages = new ServiceCatalogue<MessageModel, CatalogueFilters>(
+        Messages = new ServiceCatalogue<MessageModel, MessageFilters>(
             new MessageDatabaseCatalogue(dbContext),
             new MessageService(HttpClient, $"{Uri}/message"),
             changes.Messages

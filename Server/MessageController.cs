@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KolibSoft.MsgHub.Server;
 
-public class MessageController : CatalogueController<MessageModel, CatalogueFilters>
+public class MessageController : CatalogueController<MessageModel, MessageFilters>
 {
 
     [Authorize(MsgHubStatics.MessageReader)]
-    public override Task<Result<Page<MessageModel>?>> PageAsync([FromQuery] CatalogueFilters? filters = null)
+    public override Task<Result<Page<MessageModel>?>> PageAsync([FromQuery] MessageFilters? filters = null)
     {
         return base.PageAsync(filters);
     }
@@ -28,7 +28,7 @@ public class MessageController : CatalogueController<MessageModel, CatalogueFilt
     {
         item.Sender = item.Sender.Trim();
         item.Receiver = item.Receiver.Trim();
-        item.Message = item.Message.Trim();
+        item.Content = item.Content.Trim();
         item.State = item.State.Trim();
         return base.InsertAsync(item);
     }
@@ -38,7 +38,7 @@ public class MessageController : CatalogueController<MessageModel, CatalogueFilt
     {
         item.Sender = item.Sender.Trim();
         item.Receiver = item.Receiver.Trim();
-        item.Message = item.Message.Trim();
+        item.Content = item.Content.Trim();
         item.State = item.State.Trim();
         return base.UpdateAsync(id, item);
     }
@@ -49,6 +49,6 @@ public class MessageController : CatalogueController<MessageModel, CatalogueFilt
         return base.DeleteAsync(id);
     }
 
-    public MessageController(ICatalogueConnector<MessageModel, CatalogueFilters> catalogueConnector) : base(catalogueConnector) { }
+    public MessageController(ICatalogueConnector<MessageModel, MessageFilters> catalogueConnector) : base(catalogueConnector) { }
 
 }

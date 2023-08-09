@@ -8,7 +8,7 @@ public class MessageModel : IItem, IValidatable, IUpdatable<MessageModel>
     public Guid Id { get; set; } = Guid.NewGuid();
     public string Sender { get; set; } = string.Empty;
     public string Receiver { get; set; } = string.Empty;
-    public string Message { get; set; } = string.Empty;
+    public string Content { get; set; } = string.Empty;
     public string State { get; set; } = MsgHubStatics.Ready;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
@@ -25,7 +25,7 @@ public class MessageModel : IItem, IValidatable, IUpdatable<MessageModel>
             errors?.Add(MsgHubStatics.InvalidReceiver);
             valid = false;
         }
-        if (Message.Length > 256 || string.IsNullOrWhiteSpace(Message))
+        if (Content.Length > 256 || string.IsNullOrWhiteSpace(Content))
         {
             errors?.Add(MsgHubStatics.InvalidMessage);
             valid = false;
@@ -42,7 +42,7 @@ public class MessageModel : IItem, IValidatable, IUpdatable<MessageModel>
     {
         Sender = newState.Sender;
         Receiver = newState.Receiver;
-        Message = newState.Message;
+        Content = newState.Content;
         State = newState.State;
         UpdatedAt = DateTime.UtcNow;
     }
