@@ -9,7 +9,7 @@
   <PropertyGroup>
     <PackageId>KolibSoft.MsgHub.Server</PackageId>
     <AssemblyName>KolibSoft.MsgHub.Server</AssemblyName>
-    <PackageVersion>2.0.0-a</PackageVersion>
+    <PackageVersion>2.0.0</PackageVersion>
     <Authors>Kolib Software</Authors>
     <Copyright>Kolib Software</Copyright>
     <RepositoryUrl>https://github.com/KolibSoft/msghub</RepositoryUrl>
@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="KolibSoft.AuthStore.Server" Version="3.0.2" />
-    <PackageReference Include="KolibSoft.Catalogue.Server" Version="3.0.3" />
+    <PackageReference Include="KolibSoft.Catalogue.Server" Version="3.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="7.0.10" />
   </ItemGroup>
 

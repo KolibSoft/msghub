@@ -9,7 +9,7 @@ public class MessageModel : IItem, IValidatable, IUpdatable<MessageModel>
     public string Sender { get; set; } = string.Empty;
     public string Receiver { get; set; } = string.Empty;
     public string Message { get; set; } = string.Empty;
-    public string State { get; set; } = string.Empty;
+    public string State { get; set; } = MsgHubStatics.Ready;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
     public bool Validate(ICollection<string>? errors = default)
