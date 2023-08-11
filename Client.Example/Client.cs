@@ -1,14 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using KolibSoft.Catalogue.Core.Abstractions;
-using KolibSoft.Catalogue.Core;
 using KolibSoft.AuthStore.Core.Abstractions;
-using KolibSoft.AuthStore.Core;
-using KolibSoft.AuthStore.Core.Models;
-using KolibSoft.AuthStore.Core.Utils;
 using KolibSoft.MsgHub.Core.Utils;
-using KolibSoft.MsgHub.Core.Models;
 using KolibSoft.MsgHub.Core;
 using KolibSoft.MsgHub.Client;
+using KolibSoft.Catalogue.Core.Catalogues;
+using KolibSoft.AuthStore.Client.Services;
 
 namespace KolibSoft.AuthStore.Client.Example;
 

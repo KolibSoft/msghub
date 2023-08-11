@@ -2,7 +2,6 @@ using KolibSoft.Catalogue.Core;
 using KolibSoft.Catalogue.Core.Abstractions;
 using KolibSoft.Catalogue.Server;
 using KolibSoft.MsgHub.Core;
-using KolibSoft.MsgHub.Core.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

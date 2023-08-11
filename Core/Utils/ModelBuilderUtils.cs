@@ -1,4 +1,3 @@
-using KolibSoft.MsgHub.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace KolibSoft.MsgHub.Core.Utils;

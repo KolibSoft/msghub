@@ -1,6 +1,5 @@
-using KolibSoft.MsgHub.Core.Models;
-using KolibSoft.Catalogue.Core;
 using Microsoft.EntityFrameworkCore;
+using KolibSoft.Catalogue.Core.Catalogues;
 
 namespace KolibSoft.MsgHub.Core;
 

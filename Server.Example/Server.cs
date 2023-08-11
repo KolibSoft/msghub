@@ -3,6 +3,7 @@ using KolibSoft.AuthStore.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using KolibSoft.AuthStore.Core.Utils;
+using KolibSoft.AuthStore.Server.Controllers;
 using KolibSoft.MsgHub.Core;
 using KolibSoft.MsgHub.Core.Utils;
 using KolibSoft.MsgHub.Server;

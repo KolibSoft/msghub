@@ -1,6 +1,6 @@
 using KolibSoft.Catalogue.Core.Abstractions;
 
-namespace KolibSoft.MsgHub.Core.Models;
+namespace KolibSoft.MsgHub.Core;
 
 public class MessageModel : IItem, IValidatable, IUpdatable<MessageModel>
 {
