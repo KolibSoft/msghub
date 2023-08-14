@@ -1,4 +1,4 @@
-import { Item } from "../modules/catalogue.js";
+import { Item } from "./modules/catalogue.js";
 
 class MessageModel extends Item {
 
