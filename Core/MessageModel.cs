@@ -1,20 +1,19 @@
+using KolibSoft.Catalogue.Core;
 using KolibSoft.Catalogue.Core.Abstractions;
 
 namespace KolibSoft.MsgHub.Core;
 
-public class MessageModel : IItem, IValidatable, IUpdatable<MessageModel>
+public class MessageModel : Item, IUpdatable<MessageModel>
 {
 
-    public Guid Id { get; set; } = Guid.NewGuid();
     public string Sender { get; set; } = string.Empty;
     public string Receiver { get; set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
     public string State { get; set; } = MsgHubStatics.Ready;
-    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-    public bool Validate(ICollection<string>? errors = default)
+    public override bool Validate(ICollection<string>? errors = default)
     {
-        var valid = true;
+        var valid = base.Validate(errors);
         if (Sender.Length > 64 || string.IsNullOrWhiteSpace(Sender))
         {
             errors?.Add(MsgHubStatics.InvalidSender);
