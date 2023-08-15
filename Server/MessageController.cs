@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KolibSoft.MsgHub.Server;
 
+[Route("_NO_ROUTE_")]
 public class MessageController : CatalogueController<MessageModel, MessageFilters>
 {
 
