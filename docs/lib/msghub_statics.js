@@ -1,7 +1,7 @@
 class MsgHubStatics {
-    get Ready() { return "READY"; }
-    get Sending() { return "SENDING"; }
-    get Delivered() { return "DELIVERED"; }
+    static get Ready() { return "READY"; }
+    static get Sending() { return "SENDING"; }
+    static get Delivered() { return "DELIVERED"; }
 }
 
 export {
