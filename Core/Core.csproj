@@ -9,7 +9,7 @@
   <PropertyGroup>
     <PackageId>KolibSoft.MsgHub.Core</PackageId>
     <AssemblyName>KolibSoft.MsgHub.Core</AssemblyName>
-    <PackageVersion>2.1.2</PackageVersion>
+    <PackageVersion>2.1.3</PackageVersion>
     <Authors>Kolib Software</Authors>
     <Copyright>Kolib Software</Copyright>
     <RepositoryUrl>https://github.com/KolibSoft/msghub</RepositoryUrl>
