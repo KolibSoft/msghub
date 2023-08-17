@@ -15,7 +15,7 @@ public static class ModelBuilderUtils
             config.Property(x => x.Receiver).HasMaxLength(32);
             config.Property(x => x.Content).HasMaxLength(256);
             config.Property(x => x.State).HasMaxLength(32);
-            config.Property(x => x.UpdatedAt);
+            config.Property(x => x.UpdatedAt).HasConversion(x => x, x => DateTime.SpecifyKind(x, DateTimeKind.Utc));
             config.HasKey(x => x.Id);
         });
     }
